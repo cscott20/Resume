@@ -1,0 +1,213 @@
+%-------------------------
+% Resume in Latex
+% Author : Charles Scott
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-10pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+      
+% -----------Multiple Positions Heading-----------
+%    \resumeSubSubheading
+%     {Software Engineer I}{Oct 2014 - Sep 2016}
+%     \resumeItemListStart
+%        \resumeItem{Apache Beam}
+%          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
+%     \resumeItemListEnd
+%    \resumeSubHeadingListEnd
+%-------------------------------------------
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------NAME-----------
+\begin{center}
+    \textbf{\Huge Charles J. Scott} \\ \vspace{1pt}
+    \small 805-368-9038 $|$ \href{mailto:x@x.com}{\underline{charliejscott@outlook.com}} $|$ 
+    \href{https://linkedin.com/in/...}{\underline{linkedin.com/in/charliejscott}} $|$
+    \href{https://github.com/...}{\underline{github.com/cscott20}}
+\end{center}
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Software Engineer}{June 2021 -- Present}
+      {Pathlight}{San Francisco, CA}
+      \resumeItemListStart
+      \resumeItem{Full stack product software engineer using Django, React, Javascript, Python, SCSS.}
+\resumeItem{Initiating and leading new feature development to increase user engagement.}
+\resumeItem{Designing, building, and testing new features from ideation to deployment.}
+\resumeItem{Responding to customer feature requests, investigating and fixing time sensitive bugs throughout the product.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Software Engineer}{Sept. 2020 -- June 2021}
+      {Epsilon Data Management}{Westlake Villiage, CA}
+      \resumeItemListStart
+        \resumeItem{Building full stack RESTful web service applications from ideation to launch.}
+        \resumeItem{Developing automated tools to increase workflow efficiency and remotely\\monitor cluster health.}
+        \resumeItem{Supporting and maintaining company cloud platform.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+   \resumeSubHeadingListStart
+
+      \resumeProjectHeading
+          {\textbf{Work Force Management Scheduling}}{Pathlight}
+          \resumeItemListStart
+            \resumeItem{}
+            \resumeItem{}
+            \resumeItem{}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{Cookies}}{Pathlight}
+          \resumeItemListStart
+            \resumeItem{Built REST APIs, as well as interactive front end webpages with about 20 endpoints.}
+            \resumeItem{Full stack development using Spring Boot and production SQL DBs.}
+            \resumeItem{Replaced existing service with application to automate job processes\\and increase maintainability.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{Customer Implementation Lead}}{Pathlight}
+          \resumeItemListStart
+            \resumeItem{Built REST APIs, as well as interactive front end webpages with about 20 endpoints.}
+            \resumeItem{Full stack development using Spring Boot and production SQL DBs.}
+            \resumeItem{Replaced existing service with application to automate job processes\\and increase maintainability.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{Customer Implementation Lead}}{Pathlight}
+          \resumeItemListStart
+            \resumeItem{Built REST APIs, as well as interactive front end webpages with about 20 endpoints.}
+            \resumeItem{Full stack development using Spring Boot and production SQL DBs.}
+            \resumeItem{Replaced existing service with application to automate job processes\\and increase maintainability.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{Configs As A Service, Project Lead}}{Epsilon}
+          \resumeItemListStart
+            \resumeItem{Built REST APIs, as well as interactive front end webpages with about 20 endpoints.}
+            \resumeItem{Full stack development using Spring Boot and production SQL DBs.}
+            \resumeItem{Replaced existing service with application to automate job processes\\and increase maintainability.}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {California Polytechnic State University}{Aug. 2017 -- June 2020}
+      {B.S. Mathematics, Concentration Computer Science $|$ San Luis Obispo, CA}{}
+      \resumeItemListStart
+        \resumeItem{Early graduate, Dean’s List recipient, Academic Excellence Award of Honor recipient,\\Department of Mathematics Glassco Scholarship recipient.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-------------------------------------------
+\end{document}
