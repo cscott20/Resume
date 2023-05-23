@@ -2,40 +2,27 @@
 % Resume in Latex
 % Author : Charles Scott
 % Based off of: https://github.com/sb2nov/resume
-% License : MIT
 %------------------------
 
+%----------PREAMBLE----------
 \documentclass[letterpaper,11pt]{article}
 
-\usepackage{latexsym}
+% Packages
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\usepackage[utf8]{inputenc}
+\usepackage{xparse}
+\usepackage{xstring}
 \usepackage{marvosym}
 \usepackage[usenames,dvipsnames]{color}
-\usepackage{verbatim}
-\usepackage{enumitem}
-\usepackage[hidelinks]{hyperref}
-\usepackage{fancyhdr}
-\usepackage[english]{babel}
-\usepackage{tabularx}
-\input{glyphtounicode}
 
-
-%----------FONT OPTIONS----------
-% sans-serif
-% \usepackage[sfdefault]{FiraSans}
-% \usepackage[sfdefault]{roboto}
-% \usepackage[sfdefault]{noto-sans}
-% \usepackage[default]{sourcesanspro}
-
-% serif
-% \usepackage{CormorantGaramond}
-% \usepackage{charter}
-
-
+% Page style settings
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
-\fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
@@ -46,8 +33,6 @@
 \addtolength{\topmargin}{-.5in}
 \addtolength{\textheight}{1.0in}
 
-\urlstyle{same}
-
 \raggedbottom
 \raggedright
 \setlength{\tabcolsep}{0in}
@@ -57,63 +42,34 @@
   \vspace{-10pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
-% Ensure that generate pdf is machine readable/ATS parsable
-\pdfgentounicode=1
+% Bullet points
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
-%-------------------------
-% Custom commands
-\newcommand{\resumeItem}[1]{
+% Headings
+\newcommand{\HeadingListStart}{\begin{itemize}[leftmargin=0pt, label={}]}
+\newcommand{\HeadingListEnd}{\end{itemize}}
+
+\NewDocumentCommand{\Heading}{ O{} O{} O{} }{
+  \item
+  {\bfseries #1}\hfill{\small #2} \\
+  \IfStrEq{#3}{}{
+  }{{\itshape\small #3}}
+}
+
+
+% Item lists
+\newcommand{\ItemListStart}{
+  \begin{itemize}[itemsep=4pt, topsep=-3pt, partopsep=0pt, parsep=0pt, leftmargin=20pt]
+}
+
+\newcommand{\ItemListEnd}{\end{itemize}}
+
+\newcommand{\Item}[1]{
   \item\small{
-    {#1 \vspace{-2pt}}
+    \parbox[t]{460pt}{\raggedright #1}
   }
 }
 
-\newcommand{\resumeSubheading}[4]{
-  \vspace{-2pt}\item
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-7pt}
-}
-
-\newcommand{\resumeSubSubheading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{\small#1} & \textit{\small #2} \\
-    \end{tabular*}\vspace{-7pt}
-}
-
-\newcommand{\resumeProjectHeading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \small#1 & #2 \\
-    \end{tabular*}\vspace{-7pt}
-}
-
-\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
-
-\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
-
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
-
-%----------HEADING----------
-% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
-%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
-% \end{tabular*}
-      
-% -----------Multiple Positions Heading-----------
-%    \resumeSubSubheading
-%     {Software Engineer I}{Oct 2014 - Sep 2016}
-%     \resumeItemListStart
-%        \resumeItem{Apache Beam}
-%          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
-%     \resumeItemListEnd
-%    \resumeSubHeadingListEnd
-%-------------------------------------------
 
 %-------------------------------------------
 %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -123,91 +79,87 @@
 %----------NAME-----------
 \begin{center}
     \textbf{\Huge Charles J. Scott} \\ \vspace{1pt}
-    \small 805-368-9038 $|$ \href{mailto:x@x.com}{\underline{charliejscott@outlook.com}} $|$ 
+    \href{mailto:x@x.com}{\underline{charliejscott@outlook.com}} $|$ 
     \href{https://linkedin.com/in/...}{\underline{linkedin.com/in/charliejscott}} $|$
     \href{https://github.com/...}{\underline{github.com/cscott20}}
 \end{center}
 
 %-----------EXPERIENCE-----------
 \section{Experience}
-  \resumeSubHeadingListStart
+    \HeadingListStart
+        \Heading
+            [Pathlight][June 2021 -- Present]
+            [Software Engineer $|$ San Francisco, CA]
+        \ItemListStart
+            \Item{Developed and maintained full-stack app using Django, React, JavaScript, Python, Postgres, and SCSS.}
+            \Item{Led multiple new feature developments, both to increase user engagement and increase product value.}
+            \Item{Designed, built, and tested innovative features for smooth user experience.}
+            \Item{Responded to customer requests, troubleshot and resolved urgent customer reported bugs.}
+        \ItemListEnd
 
-    \resumeSubheading
-      {Software Engineer}{June 2021 -- Present}
-      {Pathlight}{San Francisco, CA}
-      \resumeItemListStart
-      \resumeItem{Full stack product software engineer using Django, React, Javascript, Python, SCSS.}
-\resumeItem{Initiating and leading new feature development to increase user engagement.}
-\resumeItem{Designing, building, and testing new features from ideation to deployment.}
-\resumeItem{Responding to customer feature requests, investigating and fixing time sensitive bugs\\throughout the product.}
-      \resumeItemListEnd
+        \Heading
+            [Epsilon][Sept 2020 -- June 2021]
+            [Software Engineer $|$ Westlake Villiage, CA]
+        \ItemListStart
+            \Item{Developed and deployed full stack web service applications using Java, MySQL, and JDBC.}
+            \Item{Created automated tools to enhance workflow efficiency and monitor cloud platform performance.}
+            \Item{Proactively maintained company cloud infrastructure to ensure smooth and efficient operations.}
+        \ItemListEnd
 
-    \resumeSubheading
-      {Software Engineer}{Sept. 2020 -- June 2021}
-      {Epsilon Data Management}{Westlake Villiage, CA}
-      \resumeItemListStart
-        \resumeItem{Building full stack RESTful web service applications from ideation to launch.}
-        \resumeItem{Developing automated tools to increase workflow efficiency and remotely\\monitor cluster health.}
-        \resumeItem{Supporting and maintaining company cloud platform.}
-      \resumeItemListEnd
-
-  \resumeSubHeadingListEnd
+    \HeadingListEnd
 
 %-----------PROJECTS-----------
 \section{Projects}
-   \resumeSubHeadingListStart
+    \HeadingListStart
 
-      \resumeProjectHeading
-          {\textbf{Work Force Management Scheduling, Project Co Lead}}{Pathlight}
-          \resumeItemListStart
-            \resumeItem{Co lead of major paywalled feature add to product involving multiple engineers.}
-            \resumeItem{Responsible for writing technical design documents, as well as making major feature\\decisions along with design and product teams.}
-            \resumeItem{Created the most well tested feature on the application, with both front end\\and back end unit \& functional tests tests.}
-          \resumeItemListEnd
+ 
+        \Heading
+            [Auto QA Analytics, Project Lead][Pathlight]
+        \ItemListStart
+            \Item{Led the development of dynamic new feature for Pathlight that directly addressed customer requests.}
+            \Item{Utilized automatic grading and tagging customer conversations system, allowing executives and managers to analyze sentiment, discern trends over time, and evaluate how their customer service interactions fit specified criteria.}
+            \Item{Worked with Product team to determine business needs and timelines, coordinated efforts among multiple engineers to hit targets.}
+            \Item{Authored technical documentation to ensure transparency and clarity of the feature's design, functionality, and expected performance.}
+        \ItemListEnd
+        
+        \Heading
+            [AI Manager, Project Lead][Pathlight]
+        \ItemListStart
+            \Item{Led development of AI Manager, allowing users to interact with an AI manager to get feedback on their work performance, ask company polciy questions, and more.}
+            \Item{Implemented context based data fetching, providing relevant answers to user questions while maintaining low token transactions.}
+            \Item{Collaborated with project managers to determine priorities for demos, create and assign tickets to engineers, maintaining documentation.}
+        \ItemListEnd
+   
+        \Heading
+            [Workforce Management Scheduling, Project Co-Lead][Pathlight]
+        \ItemListStart
+            \Item{Co-led the development of a major pay-walled feature involving collaboration with multiple engineers, designers, and PMs.}
+            \Item{Authored several technical design documents and played a key role in shaping feature decisions.}
+            \Item{Managed the development of features such as activity-based scheduling and agent-driven scheduling, to meet key business objectives.}
+            \Item{Ensured the implementation of best practices in testing, resulting in the most well-tested feature on the application.}
+        \ItemListEnd
 
-      \resumeProjectHeading
-          {\textbf{Cookies, Project Lead}}{Pathlight}
-          \resumeItemListStart
-            \resumeItem{Project lead, started as an idea for eng team hackathon, saw development through to launch.}
-            \resumeItem{New feature to increase product engagement, allowing employees to send recognition to peers.}
-            \resumeItem{Incremental scope increase including user facing dashboard, and tying cookies to compensation.}
-          \resumeItemListEnd
+        \Heading
+            [Cookies, Project Lead][Pathlight]
+        \ItemListStart
+            \Item{Spearheaded the development of a new feature from idea generation to successful launch.}
+            \Item{Improved user engagement by introducing a system that allows employees to send peer recognition.}
+            \Item{Expanded the scope of the project to include a user-facing dashboard and tied the recognition to compensation.}
+        \ItemListEnd
 
-      \resumeProjectHeading
-          {\textbf{New Customer Implementation, Project Lead}}{Pathlight}
-          \resumeItemListStart
-            \resumeItem{Ingesting customer data into Pathlight through open source tap apis, and Amazon Connect.}
-            \resumeItem{Communicating across multiple teams to relay goals and implementation progress to customer.}
-            \resumeItem{Improving tap reliability.}
-          \resumeItemListEnd
 
-      \resumeProjectHeading
-          {\textbf{Triage Engineer}}{Pathlight}
-          \resumeItemListStart
-            \resumeItem{Serving as primary engineer in charge of responding to urgent customer reported\\and site-wide bugs.}
-            \resumeItem{Prioritization delegation of multiple simultaneous incoming bugs.}
-            \resumeItem{Ensuring bug resolution timelines are met and relayed to customers.}
-          \resumeItemListEnd
-
-      \resumeProjectHeading
-          {\textbf{Configs As A Service, Project Lead}}{Epsilon}
-          \resumeItemListStart
-            \resumeItem{Built REST APIs, as well as interactive front end webpages with about 20 endpoints.}
-            \resumeItem{Full stack development using Spring Boot and production SQL DBs.}
-            \resumeItem{Replaced existing service with application to automate job processes\\and increase maintainability.}
-          \resumeItemListEnd
-    \resumeSubHeadingListEnd
+    \HeadingListEnd
 
 %-----------EDUCATION-----------
 \section{Education}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {California Polytechnic State University}{Aug. 2017 -- June 2020}
-      {B.S. Mathematics, Concentration Computer Science $|$ San Luis Obispo, CA}{}
-      \resumeItemListStart
-        \resumeItem{Early graduate, Dean’s List recipient, Academic Excellence Award of Honor recipient,\\Department of Mathematics Glassco Scholarship recipient.}
-      \resumeItemListEnd
-  \resumeSubHeadingListEnd
+    \HeadingListStart
+        \Heading
+            [Cal Poly][Aug 2017 - June 2020]
+            [B.S. Mathematics, Concentration Computer Science $|$ San Luis Obispo, CA]
+        \ItemListStart
+            \Item{Graduated early with honors, including Dean's List recognition and an Academic Excellence Award of Honor. Received the Department of Mathematics Glassco Scholarship for academic excellence.}
+        \ItemListEnd
+    \HeadingListEnd
 
-%-------------------------------------------
+%------------------------------
 \end{document}
