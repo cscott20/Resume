@@ -1,0 +1,164 @@
+%-------------------------
+% Resume in Latex
+% Author : Charles Scott
+% Based off of: https://github.com/sb2nov/resume
+%------------------------
+
+%----------PREAMBLE----------
+\documentclass[letterpaper,11pt]{article}
+
+% Packages
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\usepackage[utf8]{inputenc}
+\usepackage{xparse}
+\usepackage{xstring}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+
+% Page style settings
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-10pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Bullet points
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+% Headings
+\newcommand{\HeadingListStart}{\begin{itemize}[leftmargin=0pt, label={}]}
+\newcommand{\HeadingListEnd}{\end{itemize}}
+
+\newcommand{\SubHeadingListStart}{\begin{itemize}[leftmargin=8pt, label={}]}
+\newcommand{\SubHeadingListEnd}{\end{itemize}}
+
+\NewDocumentCommand{\SubHeading}{ O{} O{} O{} }{
+  \item
+  {\bfseries #1}\hfill{\small #2} \\
+  \IfStrEq{#3}{}{
+  }{{\itshape\small #3}}
+}
+
+
+\NewDocumentCommand{\Heading}{ O{} O{} O{} }{
+  \item
+  {\bfseries #1}\hfill{\small #2} \\
+  \IfStrEq{#3}{}{
+  }{{\itshape\small #3}}
+}
+
+
+% Item lists
+\newcommand{\ItemListStart}{
+  \begin{itemize}[itemsep=4pt, topsep=-3pt, partopsep=0pt, parsep=0pt, leftmargin=20pt]
+}
+
+\newcommand{\ItemListEnd}{\end{itemize}}
+
+\newcommand{\Item}[1]{
+  \item\small{
+    \parbox[t]{460pt}{\raggedright #1}
+  }
+}
+
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------NAME-----------
+\begin{center}
+    \textbf{\Huge Charles J. Scott} \\ \vspace{1pt}
+    \href{mailto:charliejscott@outlook.com}{\underline{charliejscott@outlook.com}} $|$
+    \href{https://linkedin.com/in/charliejscott}{\underline{linkedin.com/in/charliejscott}} $|$
+    \href{https://github.com/cscott20}{\underline{github.com/cscott20}}
+\end{center}
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+    \HeadingListStart
+        \Heading
+            [Echo AI][June 2021 -- Present]
+            [Software Engineer $|$ New York, NY]
+            \SubHeadingListStart
+                \SubHeading
+                    [Self Service][Echo AI]
+                \ItemListStart
+                    \Item{Lead developer on initiative to reduce labor time for Customer Service, Success, and Support teams.}
+                    \Item{Identified areas where work could be automated through integration with LLMs.}
+                    \Item{Improved user experience, to the point of empowering customers to set up their own accounts -- reducing the work required by Echo's teams.}
+                    \Item{Project collectively saves weeks of work per customer implementation.}
+                \ItemListEnd
+            \SubHeadingListEnd
+
+            \SubHeading
+                [Generative AI Platform -- Performance \& Analytics][Echo AI]
+            \ItemListStart
+                \Item{Lead developer of major new features that are essential to company's goals.}
+                \Item{Product development led customer .}
+                \Item{Deployed rapid, high quality prototypes to begin sales and board demos immediately.}
+                \Item{Worked with PMs to translate business goals and customer signals into technical scope.}
+                \Item{Coordinated multiple engineers to iterate on production code daily while maintaining quality product.}
+            \ItemListEnd
+
+        \Heading
+            [AI Manager][Echo AI]
+        \ItemListStart
+            \Item{Lead developer of a proof of concept, rapid development feature, that was translated from proposal to production code in under 2 weeks.}
+            \Item{Developed infrastructure code that was used as the basis for the company's AI platform.}
+            \Item{Collaborated with project managers to determine priorities for upcoming demos, create and assign tickets to engineers, and maintain documentation.}
+        \ItemListEnd
+
+        \Heading
+            [Work Force Management Scheduling][Echo AI]
+        \ItemListStart
+            \Item{Co-led the development of a major feature involving collaboration with multiple engineers, designers, and PMs.}
+            \Item{Authored several technical design documents and played a key role in shaping feature decisions.}
+            \Item{Managed the development of features such as activity-based scheduling and agent-driven scheduling, to meet key business objectives.}
+            \Item{Ensured the implementation of best practices in testing, resulting in the most well-tested feature on the application.}
+        \ItemListEnd
+    \Heading
+            [Epsilon][Sept 2020 -- June 2021]
+            [Software Engineer $|$ Westlake Villiage, CA]
+        \ItemListStart
+            \Item{Developed and deployed full stack web service applications using Java, MySQL, and JDBC.}
+            \Item{Created automated tools to enhance workflow efficiency and monitor cloud platform performance.}
+            \Item{Proactively maintained company cloud infrastructure to ensure smooth and efficient operations.}
+        \ItemListEnd
+
+    \HeadingListEnd
+
+%-----------EDUCATION-----------
+\section{Education}
+    \HeadingListStart
+        \Heading
+            [Cal Poly][Aug 2017 - June 2020]
+            [B.S. Mathematics, Concentration Computer Science $|$ San Luis Obispo, CA]
+        \ItemListStart
+            \Item{Graduated early with honors, including Dean's List recognition and an Academic Excellence Award of Honor. Received the Department of Mathematics Glassco Scholarship for academic excellence.}
+        \ItemListEnd
+    \HeadingListEnd
+
+%------------------------------
+\end{document}
