@@ -12,13 +12,15 @@
 \usepackage{titlesec}
 \usepackage{enumitem}
 \usepackage{fancyhdr}
+\usepackage{graphicx}
 \usepackage[hidelinks]{hyperref}
 \usepackage{tabularx}
 \usepackage[utf8]{inputenc}
 \usepackage{xparse}
 \usepackage{xstring}
 \usepackage{marvosym}
-\usepackage[usenames,dvipsnames]{color}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{mdframed} % Add this line to your preamble if not already included
 
 % Page style settings
 \pagestyle{fancy}
@@ -46,17 +48,59 @@
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
 % Headings
-\newcommand{\HeadingListStart}{\begin{itemize}[leftmargin=0pt, label={}]}
-\newcommand{\HeadingListEnd}{\end{itemize}}
+\newenvironment{HeadingList}{
+  \begin{mdframed}[
+    topline=false,
+    bottomline=false,
+    rightline=false,
+    leftline=false,
+    linecolor=gray,
+    linewidth=0pt,
+    leftmargin=0pt,
+    innerleftmargin=0pt,
+    innertopmargin=0pt,
+    innerbottommargin=0pt,
+    innerrightmargin=0pt,
+    skipabove=\parsep,
+    skipbelow=\parsep,
+  ]
+  \begin{itemize}[leftmargin=0pt, label={}]
+}{
+  \end{itemize}
+  \end{mdframed}
+}
 
-\newcommand{\SubHeadingListStart}{\begin{itemize}[leftmargin=8pt, label={}]}
-\newcommand{\SubHeadingListEnd}{\end{itemize}}
+% Define the environment for a vertical gray line
+\newenvironment{SubHeadingList}{
+  \begin{mdframed}[
+    topline=false,
+    bottomline=false,
+    rightline=false,
+    leftline=true,
+    linecolor=gray,
+    linewidth=.5pt,
+    leftmargin=8pt,
+    innerleftmargin=8pt,
+    innertopmargin=0pt,
+    innerbottommargin=0pt,
+    innerrightmargin=0pt,
+    skipabove=\parsep,
+    skipbelow=\parsep,
+  ]
+  \begin{itemize}[leftmargin=0pt, label={}]
+}{
+  \end{itemize}
+  \end{mdframed}
+}
+
 
 \NewDocumentCommand{\SubHeading}{ O{} O{} O{} }{
+  \vspace{4pt} % Space above subheading
   \item
   {\bfseries #1}\hfill{\small #2} \\
   \IfStrEq{#3}{}{
   }{{\itshape\small #3}}
+  \vspace{-10pt} % Space below subheading
 }
 
 
@@ -69,11 +113,11 @@
 
 
 % Item lists
-\newcommand{\ItemListStart}{
-  \begin{itemize}[itemsep=4pt, topsep=-3pt, partopsep=0pt, parsep=0pt, leftmargin=20pt]
+\newenvironment{ItemList}{
+  \begin{itemize}[itemsep=4pt, topsep=-3pt, partopsep=0pt, parsep=0pt, leftmargin=20pt, label=\raisebox{0.4ex}{\scalebox{0.5}{\textbullet}}]
+}{
+  \end{itemize}
 }
-
-\newcommand{\ItemListEnd}{\end{itemize}}
 
 \newcommand{\Item}[1]{
   \item\small{
@@ -88,7 +132,7 @@
 
 %----------NAME-----------
 \begin{center}
-    \textbf{\Huge Charles J. Scott} \\ \vspace{1pt}
+    \textbf{\Huge Charlie Scott} \\ \vspace{1pt}
     \href{mailto:charliejscott@outlook.com}{\underline{charliejscott@outlook.com}} $|$
     \href{https://linkedin.com/in/charliejscott}{\underline{linkedin.com/in/charliejscott}} $|$
     \href{https://github.com/cscott20}{\underline{github.com/cscott20}}
@@ -96,63 +140,61 @@
 
 %-----------EXPERIENCE-----------
 \section{Experience}
-    \HeadingListStart
-        \Heading [Echo AI][June 2021 -- Present] [Software Engineer $|$ New York, NY]
-            \SubHeadingListStart
-                \SubHeading [Self Service][Echo AI]
-                \ItemListStart
+    \begin{HeadingList}
+        \Heading[Echo AI][June 2021 -- Present][Software Engineer $|$ New York, NY]
+            \begin{SubHeadingList}
+                \SubHeading[Self Service]
+                \begin{ItemList}
                     \Item{Lead developer on initiative to reduce labor time for Customer Service, Success, and Support teams.}
                     \Item{Identified areas where work could be automated through integration with LLMs.}
                     \Item{Improved user experience, to the point of empowering customers to set up their own accounts -- reducing the work required by Echo's teams.}
                     \Item{Project collectively saves weeks of work per customer implementation.}
-                \ItemListEnd
+                \end{ItemList}
 
-                \SubHeading [Generative AI Platform -- Performance \& Analytics][Echo AI]
-                \ItemListStart
+                \SubHeading[Generative AI Platform -- Performance \& Analytics]
+                \begin{ItemList}
                     \Item{Lead developer of major new features that are essential to company's goals.}
                     \Item{Product development led customer .}
                     \Item{Deployed rapid, high quality prototypes to begin sales and board demos immediately.}
                     \Item{Worked with PMs to translate business goals and customer signals into technical scope.}
                     \Item{Coordinated multiple engineers to iterate on production code daily while maintaining quality product.}
-                \ItemListEnd
+                \end{ItemList}
 
-                \SubHeading [AI Manager][Echo AI]
-                \ItemListStart
+                \SubHeading[AI Manager]
+                \begin{ItemList}
                     \Item{Lead developer of a proof of concept, rapid development feature, that was translated from proposal to production code in under 2 weeks.}
                     \Item{Developed infrastructure code that was used as the basis for the company's AI platform.}
                     \Item{Collaborated with project managers to determine priorities for upcoming demos, create and assign tickets to engineers, and maintain documentation.}
-                \ItemListEnd
+                \end{ItemList}
 
-                \SubHeading [Work Force Management Scheduling][Echo AI]
-                \ItemListStart
+                \SubHeading[Work Force Management Scheduling]
+                \begin{ItemList}
                     \Item{Co-led the development of a major feature involving collaboration with multiple engineers, designers, and PMs.}
                     \Item{Authored several technical design documents and played a key role in shaping feature decisions.}
                     \Item{Managed the development of features such as activity-based scheduling and agent-driven scheduling, to meet key business objectives.}
                     \Item{Ensured the implementation of best practices in testing, resulting in the most well-tested feature on the application.}
-                \ItemListEnd
-            \SubHeadingListEnd
-        \Heading [Epsilon][Sept 2020 -- June 2021] [Software Engineer $|$ Westlake Villiage, CA]
-            \SubHeadingListStart
-                \SubHeading [Work Force Management Scheduling][Echo AI]
-                \ItemListStart
+                \end{ItemList}
+            \end{SubHeadingList}
+        \Heading[Epsilon][Sept 2020 -- June 2021][Software Engineer $|$ Westlake Villiage, CA]
+            \begin{SubHeadingList}
+                \SubHeading[Locale As A Service (LASS-ie)]
+                \begin{ItemList}
                     \Item{Developed and deployed full stack web service applications using Java, MySQL, and JDBC.}
                     \Item{Created automated tools to enhance workflow efficiency and monitor cloud platform performance.}
                     \Item{Proactively maintained company cloud infrastructure to ensure smooth and efficient operations.}
-                \ItemListEnd
-            \SubHeadingListEnd
-    \HeadingListEnd
-
+                \end{ItemList}
+            \end{SubHeadingList}
+    \end{HeadingList}
 
 %-----------EDUCATION-----------
 \section{Education}
-    \HeadingListStart
-        \Heading
-            [Cal Poly][Aug 2017 - June 2020]
-            [B.S. Mathematics, Concentration Computer Science $|$ San Luis Obispo, CA]
-        \ItemListStart
+    \begin{HeadingList}
+        \Heading[BS Mathematics, Computer Science][Aug 2017 - June 2020][California Polytechnic University]
+        \begin{ItemList}
             \Item{Graduated early with honors, including Dean's List recognition and an Academic Excellence Award of Honor. Received the Department of Mathematics Glassco Scholarship for academic excellence.}
-        \ItemListEnd
-    \HeadingListEnd
+            \Item{Curated unique program with Dean to concentrate in computer science application to BS in Mathematics.}
+        \end{ItemList}
+    \end{HeadingList}
 
 %------------------------------
 \end{document}
