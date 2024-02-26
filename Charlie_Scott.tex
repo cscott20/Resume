@@ -49,6 +49,20 @@
   \vspace{-10pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule\vspace{-5pt}]
 
+% Name
+\NewDocumentCommand{\Introduction}{ m m m m }{
+    \def\Name{#1}
+    \def\Email{#2}
+    \def\LinkedinUser{#3}
+    \def\GithubUser{#4}
+    \begin{center}
+        \textbf{\Huge \Name} \\ \vspace{1pt}
+        \href{mailto:\Email}{\underline{\Email}} $|$
+        \href{https://linkedin.com/in/\LinkedinUser}{\underline{linkedin.com/in/\LinkedinUser}} $|$
+        \href{https://github.com/\GithubUser}{\underline{github.com/\GithubUser}}
+    \end{center}
+}
+
 % Heading
 \NewDocumentCommand{\Heading}{ m o m m }{
     \def\Company{#1}
@@ -132,12 +146,7 @@
 
 %----------NAME-----------
 
-\begin{center}
-    \textbf{\Huge Charlie Scott} \\ \vspace{1pt}
-    \href{mailto:charliejscott@outlook.com}{\underline{charliejscott@outlook.com}} $|$
-    \href{https://linkedin.com/in/charliejscott}{\underline{linkedin.com/in/charliejscott}} $|$
-    \href{https://github.com/cscott20}{\underline{github.com/cscott20}}
-\end{center}
+\Introduction{Charlie Scott}{charliejscott@outlook.com}{charliejscott}{cscott20}
 
 %-----------EXPERIENCE-----------
 
