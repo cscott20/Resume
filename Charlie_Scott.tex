@@ -1,8 +1,7 @@
-%-------------------------
+%-------------------------------------------
+
 % Resume in Latex
 % Author : Charles Scott
-% Based off of: https://github.com/sb2nov/resume
-%------------------------
 
 %----------PREAMBLE----------
 \documentclass[letterpaper,11pt]{article}
@@ -20,7 +19,7 @@
 \usepackage{xstring}
 \usepackage{marvosym}
 \usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
-\usepackage{mdframed} % Add this line to your preamble if not already included
+\usepackage{mdframed}
 
 % Page style settings
 \pagestyle{fancy}
@@ -38,6 +37,8 @@
 \raggedbottom{}
 \raggedright{}
 \setlength{\tabcolsep}{0in}
+
+%----------CUSTOM COMMANDS----------
 
 % Bullet points
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
@@ -124,11 +125,13 @@
 }{\end{itemize}}
 
 %-------------------------------------------
-%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%
 
 \begin{document}
 
 %----------NAME-----------
+
 \begin{center}
     \textbf{\Huge Charlie Scott} \\ \vspace{1pt}
     \href{mailto:charliejscott@outlook.com}{\underline{charliejscott@outlook.com}} $|$
@@ -137,6 +140,7 @@
 \end{center}
 
 %-----------EXPERIENCE-----------
+
 \section{Experience}
     \begin{HeadingList}
         \Heading{Echo AI}[https://www.echoai.com]{June 2021--Present}{Software Engineer $|$ New York, NY}
@@ -146,24 +150,24 @@
                 \begin{ItemList}
                     \Item{Core feature of new product that generated over \$1m in revenue in under 200 days.}
                     \Item{Engineering owner, allows users to simultaneously analyze AI insights generated for hundreds of thousands of conversations between their customer service agents and customers.}
-                    \Item{Developing continuious improvement plan to incrementally improve performance of product over time to meet future customer needs.}
-                    \Item{Directly working with customers to identify needs, and creating product roadmaps to implement feature requests over time.}
-                    \Item{Onboarding multiple engineers onto new platform to allow for faster development.}
+                    \Item{Developed continuous improvement plan to incrementally improve performance of product over time to meet future customer needs.}
+                    \Item{Directly worked with customers to identify needs, and created product roadmaps to implement feature requests over time.}
+                    \Item{Onboarded multiple engineers onto new platform to allow for faster development.}
                 \end{ItemList}
 
                 \SubHeading{Conversation Intelligence Performance Management}
                 \begin{ItemList}
                     \Item{Lead developer of core feature that uses AI insights to create admin dashboards to provide insights into team performance.}
-                    \Item{Allows leaders to easily idenify teamwide areas of both improvement, and achievement. Designed heatmap grid components to visualize datasets.}
-                    \Item{Product owner, writing technical documents, leading design discussions, and coordinating with organization leaders to future-proof the product, allowing future product developments to be easily integrated into the app.}
+                    \Item{Allows leaders to easily identify teamwide areas of both improvement, and achievement. Designed reusable heatmap grid components to create a user friendly visual for complex datasets.}
+                    \Item{Product owner, wrote technical documents, lead design discussions, and coordinated with organization leaders to future-proof the product, allowed future product developments to be easily integrated into the app.}
                 \end{ItemList}
 
                 \SubHeading{Reinforced Learning Platform}
                 \begin{ItemList}
                     \Item{Owner of new platform that allows administrators and agents to provide feedback on AI generated insights.}
-                    \Item{Developed algoritms to intelligently select areas in need of human feedback.}
+                    \Item{Developed algorithms to intelligently select areas in need of human feedback.}
                     \Item{Designed database schema, API endpoints, and GUI to support feedback on variety of existing database models.}
-                    \Item{Project directly addressed customer concerns around AI innacuracies, and directly lead to increased accuracy through model fine tuning using data collected.}
+                    \Item{Project directly addressed customer concerns around AI inaccuracies, and directly lead to increased accuracy through model fine tuning using data collected.}
                 \end{ItemList}
 
             \end{SubHeadingList}
@@ -172,7 +176,7 @@
         \Heading{Epsilon}[https://www.epsilon.com/us]{Sept 2020--June 2021}{Software Engineer $|$ San Francisco, CA}
             \begin{SubHeadingList}
 
-                \SubHeading{Locale As A Service (LASS-ie)}
+                \SubHeading{Developer Database Safe Interaction Application}
                 \begin{ItemList}
                     \Item{Developed full stack web apps which allowed developers to safely and easily modify production DBs through GUI.}
                     \Item{Automated labor intensive developer tasks related to monitoring of company cloud platform performance.}
@@ -184,9 +188,9 @@
         \Heading{Cigna}[https://www.cigna.com]{June 2019--Aug 2019}{Intern $|$ Santa Monica, CA}
             \begin{SubHeadingList}
 
-                \SubHeading{Data Team Automation}
+                \SubHeading{Data \& Research Task Automation Project}
                 \begin{ItemList}
-                    \Item{Independantly contacted and worked with product managers to understand business needs. Led to starting new project to automate online data collection that was previously done manually.}
+                    \Item{Independently contacted and worked with product managers to understand business needs. Led to starting new project to automate online data collection that was previously done manually.}
                     \Item{Integrated this new application with existing manual data collection pipelines to ease transition.}
                     \Item{Developed tools to speed existing process of manual data collection efforts by upwards of 30\% per employee.}
                 \end{ItemList}
@@ -195,6 +199,7 @@
     \end{HeadingList}
 
 %-----------EDUCATION-----------
+
 \section{Education}
     \begin{HeadingList}
         \Heading{BS Mathematics, Computer Science}{Aug 2017--June 2020}{California Polytechnic University}
@@ -204,5 +209,6 @@
         \end{ItemList}
     \end{HeadingList}
 
-%------------------------------
 \end{document}
+
+%-------------------------------------------
