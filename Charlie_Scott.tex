@@ -111,7 +111,7 @@
     skipabove=\parsep,
     skipbelow=\parsep,
   ]
-  \begin{itemize}[leftmargin=0pt, label={}]
+  \begin{itemize}[itemsep=0pt, leftmargin=0pt, label={}]
 }{
   \end{itemize}
   \end{mdframed}
@@ -126,7 +126,7 @@
     leftmargin=8pt,
     innerleftmargin=8pt,
   ]
-  \begin{itemize}[leftmargin=0pt, label={}]
+  \begin{itemize}[itemsep=0pt, leftmargin=0pt, label={}]
 }{
   \end{itemize}
   \end{mdframed}
@@ -134,7 +134,7 @@
 
 % ItemList
 \newenvironment{ItemList}{
-  \begin{itemize}[itemsep=4pt, topsep=-3pt, partopsep=0pt, parsep=0pt, leftmargin=20pt, label=\raisebox{0.4ex}{\scalebox{0.5}{\textbullet}}]
+  \begin{itemize}[itemsep=0pt, topsep=-3pt, partopsep=0pt, parsep=0pt, leftmargin=20pt, label=\raisebox{0.4ex}{\scalebox{0.5}{\textbullet}}]
 }{\end{itemize}}
 
 %-------------------------------------------
@@ -146,6 +146,17 @@
 %----------NAME-----------
 
 \Introduction{Charlie Scott}{charliejscott@outlook.com}{charliejscott}{cscott20}
+
+%----------SUMMARY-----------
+
+\section{Summary}
+    {
+        Hello! My name is Charlie and I'm an fullstack software engineer focused on building beautiful and high traffic products.
+        At Echo AI, I have experience building with Python / Django for backend, Javascript / React for frontend, and CSS for styling.
+        I also have experience building in Java during my time at Epsilon.
+        On a team, I'm a leader who pushes for customer-first design and seamless user experiences.
+        I also enjoy coordinating team wide events, and playing my part in building a fun and productive team culture that I'm proud to be a part of.
+    }
 
 %-----------EXPERIENCE-----------
 
@@ -219,7 +230,6 @@
         \Heading{BS Mathematics, Computer Science}{Aug 2017--June 2020}{California Polytechnic University, SLO}
         \begin{ItemList}
             \Item{Graduated early with honors, including Dean's List recognition and an Academic Excellence Award of Honor. Received the Department of Mathematics Glassco Scholarship for academic excellence.}
-            \Item{Collaborated with the Dean to design a specialized Computer Science concentration tailored to the Mathematics focus program.}
         \end{ItemList}
     \end{HeadingList}
 
